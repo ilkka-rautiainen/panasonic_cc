@@ -1,8 +1,11 @@
 # Panasonic Comfort Cloud - Home Assistant Integration
 
+> This fork adds a separate Fireplace on/off switch with device-reported status
+> and Fireplace diagnostics. Existing configuration and entity unique IDs are preserved.
+
 [![GitHub Release][releases-shield]][releases]
 [![License][license-shield]](LICENSE)
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
 [![Integration Usage](https://img.shields.io/badge/dynamic/json?color=41BDF5&style=for-the-badge&logo=home-assistant&label=usage&suffix=%20installs&cacheSeconds=15600&url=https://analytics.home-assistant.io/custom_integrations.json&query=$.panasonic_cc.total)](https://analytics.home-assistant.io/)
 
 This is a custom integration to control Panasonic Comfort Cloud devices in [Home Assistant](https://home-assistant.io). It supports Panasonic air conditioners/heat pumps, Panasonic Aquarea air-to-water heat pump systems, and standalone HWS heat pump hot water tanks.
@@ -43,6 +46,7 @@ This is a custom integration to control Panasonic Comfort Cloud devices in [Home
 - Legacy `set_horizontal_swing_mode` service for automations
 
 ### Switches
+- **Fireplace** — Separate on/off control with device-reported status (supported air conditioners only)
 - **Nanoe** — Toggle Nanoe air purification (where available)
 - **ECONAVI** — Toggle ECONAVI energy-saving mode (where available)
 - **AI ECO** — Toggle AI ECO mode (where available)
@@ -105,11 +109,10 @@ This is a custom integration to control Panasonic Comfort Cloud devices in [Home
 ## Installation
 
 ### HACS (recommended)
-1. [Install HACS](https://hacs.xyz/docs/setup/download), if you haven't already
-2. [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sockless-coding&repository=panasonic_cc&category=integration)
-3. Press the **Download** button
-4. Restart Home Assistant
-5. [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=panasonic_cc)
+
+Add `https://github.com/ilkka-rautiainen/panasonic_cc` as a custom repository in
+HACS (type **Integration**). Use this fork instead of the original repository;
+keep the existing Panasonic integration entry.
 
 ### Manual Installation
 1. Clone or download this repository
